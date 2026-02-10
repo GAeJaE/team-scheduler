@@ -6,17 +6,13 @@ from streamlit_calendar import calendar
 
 # ==========================================
 # 👇 Supabase 정보 (보안을 위해 secrets 사용 권장)
-# ==========================================
 try:
     if "SUPABASE_URL" in st.secrets:
         SUPABASE_URL = st.secrets["SUPABASE_URL"]
         SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
     else:
-        SUPABASE_URL = "https://ovmwkpogwcayuuzablxx.supabase.co"
-        SUPABASE_KEY = "sb_publishable_0Z7HSyptiI5rYAQ1uR56Rw_27V4NnFS"
-except:
-    SUPABASE_URL = "https://ovmwkpogwcayuuzablxx.supabase.co"
-    SUPABASE_KEY = "sb_publishable_0Z7HSyptiI5rYAQ1uR56Rw_27V4NnFS"
+        st.error("비밀키를 찾을 수 없습니다.")
+        st.stop()
 # ==========================================
 
 st.set_page_config(page_title="팀 스케줄러", page_icon="📅", layout="wide")
