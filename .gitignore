@@ -1,0 +1,18 @@
+# .gitignore 파일 내용
+
+# 1. Streamlit 비밀키 폴더 무시
+.streamlit/secrets.toml
+
+# 2. PC 프로그램용 비밀키 파일 무시
+.env
+
+# 3. 파이썬 캐시 및 가상환경 무시
+__pycache__/
+*.pyc
+venv/
+.vscode/
+
+# 4. exe 빌드 관련 파일 무시
+build/
+dist/
+*.spec
